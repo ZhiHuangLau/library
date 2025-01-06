@@ -8,7 +8,37 @@
   
 </head>
 <body>
+  <dialog>
+    <form action="" class="form-format">
+      <div class="form-format">
+        <label for="author">Author:</label>
+        <input type="text" name="author" id="author" required>
+      </div>
+      <div class="form-format">
+        <label for="title">Book Title:</label>
+        <input type="text" name="title" id="title">
+      </div>
+      <div class="form-format">
+        <label for="pages">Number of pages:</label>
+        <input type="text" name="pages" id="pages" inputmode="numeric">
+      </div>
+      <div class="form-format">
+        <label for="status">Read status:</label>
+        <select name="status" id="status">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+      <button formmethod="dialog">Cancel</button>
+      <button id="confirmBtn"> Close</button>
+    </form>
+    
+  </dialog>
   <button id="addBook">Add Book</button>
+
+
+
+
   <div class="container">
     <div class="table-row">
       <div class="number">Number</div>
