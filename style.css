@@ -1,17 +1,17 @@
 .container{
   display: grid;
   grid-template-rows: 0.5fr 1fr;
-
+  grid-auto-flow: column;
 }
 
-#table-row{
-  grid-area: 1/1/2/2;
+.table-row{
+  
   display: grid;
   grid-template-columns: 0.5fr 1fr 1fr 0.5fr 1fr 1fr 1fr;
   border: 1px solid black;
 }
 
-#table-row div{
+.table-row div{
   border:1px solid black;
   text-align: center;
 }
