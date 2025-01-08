@@ -1,4 +1,4 @@
-const myLibrary=[bruh={author:"me",title:"keke",pages:55,status:"yes"}];
+const myLibrary=[bruh={author:"me",title:"keke",pages:55,status:"yes"},bruh={author:"me",title:"keke",pages:55,status:"yes"},bruh={author:"me",title:"keke",pages:55,status:"yes"}];
 
 const dialog=document.querySelector("dialog");
 const showButton=document.querySelector("dialog+button");
@@ -7,6 +7,7 @@ const inputAut=dialog.querySelector("#author");
 const inputTit=dialog.querySelector("#title");
 const inputPg=dialog.querySelector("#pages");
 const inputRd=dialog.querySelector("#status");
+
 
 
 
@@ -28,17 +29,6 @@ function addBookToLibrary(author,title,pages,status){
 showButton.addEventListener("click",() =>{
   dialog.showModal();
 })
-
-
-
-
-
-
-
-
-
-
-
 
 let loopNum=1;
 function showTable(){
@@ -86,14 +76,28 @@ function showTable(){
   
   }}
 
-  showTable();
+showTable();
+
+const changeStatus=document.querySelectorAll(".change-status-but");
+const removeButton=document.querySelectorAll(".remove-book");
 
 
-  closeButton.addEventListener("click",(event) =>{
-    event.preventDefault();
-    dialog.close([inputAut.value,inputTit.value,inputPg.value,inputRd.value]); 
-    mek=dialog.returnValue.split(",");
-    addBookToLibrary(mek[0],mek[1],mek[2],mek[3]);
-    showTable();
-  })
+closeButton.addEventListener("click",(event) =>{
+  event.preventDefault();
+  dialog.close([inputAut.value,inputTit.value,inputPg.value,inputRd.value]); 
+  mek=dialog.returnValue.split(",");
+  addBookToLibrary(mek[0],mek[1],mek[2],mek[3]);
+})
 
+changeStatus.forEach(Element => {
+    Element.addEventListener("click",()=>{
+      let Dad=Element.parentElement;
+      let brother=Number(Dad.firstChild.textContent)-1;
+      let targetBook=myLibrary[brother];
+      if (targetBook.status=="yes") {
+        targetBook.status='no';
+      }else{
+        targetBook.status='yes';
+      }
+    })
+});
