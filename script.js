@@ -1,4 +1,4 @@
-const myLibrary=[bruh={author:"me",title:"keke",pages:55,status:"yes"},bruh={author:"me",title:"keke",pages:55,status:"yes"},bruh={author:"me",title:"keke",pages:55,status:"yes"}];
+const myLibrary=[bruh={author:"me",title:"keke",pages:55,status:"yes"},bruh={author:"me",title:"keke",pages:66,status:"yes"},bruh={author:"me",title:"keke",pages:77,status:"yes"}];
 
 const dialog=document.querySelector("dialog");
 const showButton=document.querySelector("dialog+button");
@@ -100,4 +100,13 @@ changeStatus.forEach(Element => {
         targetBook.status='yes';
       }
     })
+});   
+
+removeButton.forEach(element => {
+  element.addEventListener("click",()=>{
+    let Dad=element.parentElement;
+    let brother=Number(Dad.firstChild.textContent)-1;
+    let targetBook=myLibrary[brother];
+    myLibrary.splice(brother,1)
+  })
 });
